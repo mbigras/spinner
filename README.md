@@ -9,7 +9,7 @@ The following example illustrates building and running the spinner app. Spinner 
 1. Get the code.
 
    ```
-   git clone ...
+   git clone git@github.com:mbigras/spinner.git
    cd spinner
    ```
 
@@ -51,7 +51,7 @@ The following example illustrates building a spinner Docker image and passing co
 1. Get the code.
 
    ```
-   git clone ...
+   git clone git@github.com:mbigras/spinner.git
    cd spinner
    ```
 
