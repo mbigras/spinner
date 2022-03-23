@@ -4,7 +4,7 @@
 
 ## Getting started
 
-The following example illustrates building and running the spinner app. Spinner exists with a 0 exit code because it handles the SIGTERM Unix signal.
+The following example illustrates building and running the spinner app. Spinner exits with a 0 exit code because it handles the SIGTERM Unix signal.
 
 1. Get the code.
 
