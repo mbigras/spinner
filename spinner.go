@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	fmt.Printf("Running as pid: %d\n", os.Getpid())
 	fmt.Printf("Got args: %v\n", os.Args[1:])
 	// Set up channel on which to send signal notifications.
 	// We must use a buffered channel or risk missing the signal

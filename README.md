@@ -4,7 +4,7 @@
 
 ## Getting started
 
-The following example illustrates building and running the spinner app. Spinner exits with a 0 exit code because it handles the SIGTERM Unix signal.
+The following procedure illustrates how to build and run the _spinner_ Go app. App _spinner_ exits with a 0 exit code because it handles the SIGTERM Unix signal.
 
 1. Get the code.
 
@@ -16,7 +16,7 @@ The following example illustrates building and running the spinner app. Spinner 
 1. Build the app.
 
    ```
-   go build -o spinner spinner.go
+   go build
    ```
 
 1. Run spinner.
@@ -25,9 +25,7 @@ The following example illustrates building and running the spinner app. Spinner 
    ./spinner && echo $?
    ```
 
-1. Open a new terminal.
-
-1. Send the SIGTERM Unix signal to spinner.
+1. In a new terminal, send the _`SIGTERM`_ Unix signal to spinner.
 
    ```
    pkill spinner
@@ -35,10 +33,11 @@ The following example illustrates building and running the spinner app. Spinner 
 
 1. Notice that spinner cleanly exits.
 
-   The output should look like the following:
+   Your output should look like the following:
 
    ```
    $ ./spinner && echo $?
+   Running as pid: 14897
    Got args: []
    Got signal: terminated
    0
@@ -46,7 +45,7 @@ The following example illustrates building and running the spinner app. Spinner 
 
 ## Docker example
 
-The following example illustrates building a spinner Docker image and passing command-line arguments. You can stop the Docker image because spinner handles the SIGTERM Unix signal that Docker sends to your container when you run the `docker stop` command.
+The following example illustrates how to build and run a _spinner_ Docker container. You can stop the container because _spinner_ handles the SIGTERM Unix signal that Docker sends to your container when you run the `docker stop` command.
 
 1. Get the code.
 
@@ -71,9 +70,7 @@ The following example illustrates building a spinner Docker image and passing co
 
    Also, the exec ENTRYPOINT form—`ENTRYPOINT ["/app/spinner"]`—ensures that `/bin/sh` shell running inside your Docker container won't block Unix signals.
 
-1. Open a new terminal.
-
-1. Stop the container.
+1. In a new terminal, stop the container.
 
    ```
    docker stop spinner
@@ -81,10 +78,11 @@ The following example illustrates building a spinner Docker image and passing co
 
 1. Notice that spinner cleanly exits.
 
-   The output should look like the following:
+   Your output should look like the following:
 
    ```
    $ docker run -it --rm --name spinner spinner foo bar baz && echo $?
+   Running as pid: 1
    Got args: [foo bar baz]
    Got signal: terminated
    0
